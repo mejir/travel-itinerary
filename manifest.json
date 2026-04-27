@@ -1,0 +1,29 @@
+{
+  "name": "たびノート",
+  "short_name": "たびノート",
+  "description": "旅のスケジュールをリアルタイムで共有できる旅程アプリ",
+  "start_url": "/travel-itinerary/",
+  "scope": "/travel-itinerary/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f2f7",
+  "theme_color": "#0a5fa8",
+  "icons": [
+    {
+      "src": "/travel-itinerary/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/travel-itinerary/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/travel-itinerary/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
