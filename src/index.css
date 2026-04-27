@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'SF Pro Text', system-ui, 'Segoe UI', sans-serif;
+  background: #F2F2F7;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* ── iOS Semantic Color Variables ── */
+:root {
+  --ios-blue:    #007AFF;
+  --ios-red:     #FF3B30;
+  --ios-green:   #34C759;
+  --ios-label:   #1C1C1E;
+  --ios-label2:  #8E8E93;
+  --ios-label3:  #C7C7CC;
+  --ios-bg:      #FFFFFF;
+  --ios-bg2:     #F2F2F7;
+  --ios-sep:     rgba(60,60,67,0.12);
+}
+
+/* ── Typography Scale (SF Pro) ── */
+.type-large-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+.type-title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+.type-body {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.5;
+}
+.type-caption {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.4;
+}
+
+/* ── Animations ── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+@keyframes now-line-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+@keyframes slide-in-from-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-from-left {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes reaction-pop {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+.animate-fade-in-up       { animation: fade-in-up 0.25s ease-out both; }
+.animate-slide-up         { animation: slide-up 0.3s cubic-bezier(0.32,0.72,0,1) both; }
+.animate-skeleton         { animation: skeleton-pulse 1.4s ease-in-out infinite; }
+.animate-now-pulse        { animation: now-line-pulse 2s ease-in-out infinite; }
+.animate-slide-from-right { animation: slide-in-from-right 0.2s ease-in-out both; }
+.animate-slide-from-left  { animation: slide-in-from-left  0.2s ease-in-out both; }
+.animate-reaction-pop     { animation: reaction-pop 0.22s ease-out both; }
+
+/* ── WeatherBackground particle animations ── */
+@keyframes rain-fall {
+  0%   { transform: translateY(-20px); opacity: 0; }
+  8%   { opacity: 0.45; }
+  88%  { opacity: 0.35; }
+  100% { transform: translateY(200px); opacity: 0; }
+}
+@keyframes flash {
+  0%, 100%  { opacity: 0; }
+  5%         { opacity: 0.15; }
+  10%        { opacity: 0; }
+  60%        { opacity: 0; }
+  62%        { opacity: 0.85; }
+  64%        { opacity: 0; }
+  66%        { opacity: 0.6; }
+  68%        { opacity: 0; }
+}
+@keyframes snow-fall {
+  0%   { transform: translateY(-10px) rotate(0deg);   opacity: 0; }
+  8%   { opacity: 0.7; }
+  92%  { opacity: 0.55; }
+  100% { transform: translateY(200px) rotate(540deg); opacity: 0; }
+}
+@keyframes twinkle { 0%,100%{opacity:.85} 50%{opacity:.1} }
+@keyframes drift   { 0%{transform:translateX(-100px)} 100%{transform:translateX(420px)} }
+@keyframes pulse   { 0%,100%{opacity:.18} 50%{opacity:.28} }
+@keyframes mist {
+  0%,100%{ opacity:.2;  transform:translateX(0); }
+  50%    { opacity:.45; transform:translateX(12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-slide-up,
+  .animate-skeleton,
+  .animate-ping,
+  .animate-pulse,
+  .animate-now-pulse,
+  .animate-slide-from-right,
+  .animate-slide-from-left,
+  .animate-reaction-pop { animation: none !important; }
+}

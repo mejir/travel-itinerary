@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /trips/{tripId} {
+      allow read, write: if request.time < timestamp.date(2026, 12, 31);
+
+      match /plans/{planId} {
+        allow read, write: if request.time < timestamp.date(2026, 12, 31);
+      }
+    }
+  }
+}
