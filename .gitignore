@@ -1,3 +1,6 @@
+# Claude Code local settings (do not commit)
+.claude/
+
 # Logs
 logs
 *.log
